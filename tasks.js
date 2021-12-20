@@ -40,6 +40,9 @@ function onDataReceived(text) {
   if (text === 'exit\n') {
     quit();
   }
+  if (text === 'help\n') {
+    help();
+  }
   else if(text === 'hello\n'){
     hello();
   }
@@ -59,8 +62,7 @@ function onDataReceived(text) {
 function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
-
-
+ 
 /**
  * Says hello
  *
@@ -78,11 +80,16 @@ function hello(){
  */
 function quit(){
   console.log('Quitting now, goodbye!')
-  process.exit();
+  process.quit();
 }
 function exit(){
-  console.log('Quitting now, goodbye!')
-  process.exit();
+  console.log('exit now, goodbye!')
+  process.quit();
+}
+
+//help
+function help(){
+  console.log('option:\n -quite: exit the  application\n -exit: exit the application \n -hello: print word ')
 }
 
 // The following line starts the application
