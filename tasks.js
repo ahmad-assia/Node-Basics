@@ -65,7 +65,8 @@ function unknownCommand(c){
  
 /**
  * Says hello
- *
+ *list of command
+ * 
  * @returns {void}
  */
 function hello(){
@@ -89,7 +90,7 @@ function exit(){
 
 //help
 function help(){
-  console.log('option:\n -quite: exit the  application\n -exit: exit the application \n -hello: print word ')
+  console.log('option:\n -quite: exit the application\n -exit: exit the application \n -hello: print word ')
 }
 
 // The following line starts the application
