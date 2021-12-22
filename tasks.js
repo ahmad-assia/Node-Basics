@@ -105,7 +105,7 @@ function help(){
 }
 function Hello(name){
   let n = name.trim();
-  console.log('hello '+n+"!")
+  console.log('hello'+" "+n+"!")
 }
 // The following line starts the application
-startApp("Assi ahmad")
+startApp("Assia ahmad")
