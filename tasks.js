@@ -43,11 +43,15 @@ function onDataReceived(text) {
   if (text === 'help\n') {
     help();
   }
-  else if(text === 'hello\n'){
+  if (text === 'hello\n') {
     hello();
+  }
+  if(text.trim().slice(0,5) === 'hello'){
+    Hello(text.slice(5));
   }
   else{
     unknownCommand(text);
+    console.log(text);
   }
 }
 
@@ -59,13 +63,14 @@ function onDataReceived(text) {
  * @param  {string} c the text received
  * @returns {void}
  */
+
 function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
  
 /**
  * Says hello
- *list of command
+
  * 
  * @returns {void}
  */
@@ -87,11 +92,20 @@ function exit(){
   console.log('exit now, goodbye!')
   process.quit();
 }
+/**
+ * list of command
+ *
+ *
+ * @returns {void}
+ */
 
 //help
 function help(){
   console.log('option:\n -quite: exit the application\n -exit: exit the application \n -hello: print word ')
 }
-
+function Hello(name){
+  let n = name.trim();
+  console.log('hello '+n+"!")
+}
 // The following line starts the application
 startApp("Assi ahmad")
