@@ -101,7 +101,7 @@ function exit(){
 
 //help
 function help(){
-  console.log('option:\n -quite: exit the application\n -exit: exit the application \n -hello: print word ')
+  console.log('option:\n -quite: exit the application\n -exit: exit the application \n -hello: greeting you for example if you enter hello assia the answer is hello assia!')
 }
 function Hello(name){
   let n = name.trim();
