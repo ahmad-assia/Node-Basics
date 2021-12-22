@@ -53,6 +53,9 @@ function onDataReceived(text) {
     unknownCommand(text);
     console.log(text);
   }
+  if (text === 'list\n') {
+    arraylist();
+  }
 }
 
 
@@ -99,9 +102,16 @@ function exit(){
  * @returns {void}
  */
 
+//array 
+let list = ["assia", "ahmad", "tripoli mina"]; 
+function arraylist(){
+  for (i=0;i<=list.length-1;i++){
+  console.log(list[i])
+}
+}
 //help
 function help(){
-  console.log('option:\n -quite: exit the application\n -exit: exit the application \n -hello: greeting you for example if you enter hello assia the answer is hello assia!')
+  console.log('option:\n -quite: exit the application\n -exit: exit the application \n -hello: greeting you for example if you enter hello assia the answer is hello assi')
 }
 function Hello(name){
   let n = name.trim();
