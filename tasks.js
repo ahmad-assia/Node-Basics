@@ -54,9 +54,24 @@ function onDataReceived(text) {
     console.log(text);
   }
   if (text === 'list\n') {
-    arraylist();
+    list();
   }
+ if(text.trim().split(" ")[0] === 'add'){
+    add(text);
+  }
+  if (text === 'array\n') {
+    array();
+
 }
+else if(text.slice(0,5) === 'hello'){
+  HELLO(text.slice(5));
+}
+else if(text === 'array\n'){
+  arraylist();
+}
+
+else{
+  unknownCommand(text);
 
 
 /**
@@ -103,11 +118,29 @@ function exit(){
  */
 
 //array 
-let list = ["assia", "ahmad", "tripoli mina"]; 
-function arraylist(){
-  for (i=0;i<=list.length-1;i++){
-  console.log(list[i])
+console.log(('hello ' + n +"!"))
+
 }
+//array
+let list=["blue","orange","red","yellow"]
+function arraylist(){
+  for(i=0;i<=list.length-1;i++){
+    console.log(list[i])
+  }
+}
+function add(text){
+
+  let addMessage=text.slice(4);
+  if(addMessage.length > 0){
+  tasks.push(addMessage.trim());
+  console.log(addMessage);
+
+  }else{
+
+    console.log('Error you need to add a task')
+   
+
+  }
 }
 //help
 function help(){
@@ -116,6 +149,49 @@ function help(){
 function Hello(name){
   let n = name.trim();
   console.log('hello'+" "+n+"!")
+}
+//array
+
+let tasks = ['orange','red','blue','green']
+function list(){
+  tasks.forEach((element,index) => {
+    console.log(${index}-${tasks[index]})
+  });
+
+}
+//arrayadd
+function add(text){
+
+  let n=text.slice(4);
+  if(n.length > 0){
+  tasks.push(n.trim());
+  console.log(n);
+
+  }else{
+
+    console.log('you need to add a value')
+
+
+  }
+}
+
+
+//delete last elem
+//function last(){
+  //tasks.pop();
+  //onsole.log(tasks);
+
+//remove second elem
+
+//function second(){
+ 
+    //tasks.splice(1,1) ;
+
+
+//remove first element
+//function first(){
+  //tasks.shift() ;
+   //console.log(tasks);
 }
 // The following line starts the application
 startApp("Assia ahmad")
