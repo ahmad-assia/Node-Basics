@@ -63,15 +63,10 @@ function onDataReceived(text) {
     array();
 
 }
-else if(text.slice(0,5) === 'hello'){
-  HELLO(text.slice(5));
-}
-else if(text === 'array\n'){
-  arraylist();
-}
+if (text === 'array\n') {
+  array();
 
-else{
-  unknownCommand(text);
+}
 
 
 /**
@@ -116,46 +111,18 @@ function exit(){
  *
  * @returns {void}
  */
-
-//array 
-console.log(('hello ' + n +"!"))
-
-}
-//array
-let list=["blue","orange","red","yellow"]
-function arraylist(){
-  for(i=0;i<=list.length-1;i++){
-    console.log(list[i])
-  }
-}
-function add(text){
-
-  let addMessage=text.slice(4);
-  if(addMessage.length > 0){
-  tasks.push(addMessage.trim());
-  console.log(addMessage);
-
-  }else{
-
-    console.log('Error you need to add a task')
-   
-
-  }
-}
-//help
 function help(){
-  console.log('option:\n -quite: exit the application\n -exit: exit the application \n -hello: greeting you for example if you enter hello assia the answer is hello assi')
+console.log('Option:\n -quite :Exits the application\n -exit :Exits the application\n -hello :print word hello!\n -help :help command\n -hello x :print hello x! ex: hello souad -> print hello souad!')
 }
-function Hello(name){
+function HELLO(name){
   let n = name.trim();
-  console.log('hello'+" "+n+"!")
+  console.log(('hello ' + n +"!"))
 }
 //array
-
-let tasks = ['orange','red','blue','green']
+let tasks = ['orange', 'red']
 function list(){
   tasks.forEach((element,index) => {
-    console.log(${index}-${tasks[index]})
+    console.log(`${index}-${tasks[index]}`)
   });
 
 }
